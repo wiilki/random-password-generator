@@ -6,6 +6,7 @@ function writePassword() {
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // Variables
   var wrongNumMsg = "Invalid choice. Choose a number between 8-128";
   var noCharMsg = "You must choose at least 1 character type. Try again!";
 
@@ -22,32 +23,12 @@ function writePassword() {
   var isLower = window.confirm("Include lowercase?");
   var isSpecial = window.confirm("Include special characters?");
 
-  // Assigns values to "Yes" or "No" for confirmation screen
-
-  if (isUpper) {
-    isUpper = "Yes"
-  } else {
-    isUpper = "No"
-  }
-
-  if (isLower) {
-    isLower = "Yes"
-  } else {
-    isLower = "No"
-  }
-
-  if (isSpecial) {
-    isSpecial = "Yes"
-  } else {
-    isSpecial = "No"
-  }
-
   // Confirmation of users choices
   var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
 
   // Message if character type is not chosen
   if (isConfirmed) {
-    if ((isUpper && isLower && isSpecial) == "No") {
+    if ((isUpper && isLower && isSpecial) == false) {
       window.alert(noCharMsg);
     }
   }
