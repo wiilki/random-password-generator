@@ -11,15 +11,22 @@ function writePassword() {
 // Prompts for password length
 var passLength = window.prompt("Enter length of password between 8 and 128");
 
-if (passLength < 8 || passLength > 128){
-  window.prompt("Input a number between 8 and 128")
-} else {
-  document.getElementById(passLength);
-}
 
-// Asks if uppercase included
+if (passLength < 8 || passLength > 128){
+  window.prompt("Input a number between 8 and 128");
+  document.getElementById(passLength);
+} 
+document.getElementById(passLength);
+
+// Asks for character type choices
 var isUpper = window.confirm("Include uppercase?");
 document.getElementById(isUpper);
+
+var isLower = window.confirm("Include lowercase?");
+document.getElementById(isLower);
+
+var isSpecial = window.confirm("Include special characters?");
+document.getElementById(isSpecial);
 
 if (isUpper){
   isUpper = "Yes"
@@ -27,19 +34,11 @@ if (isUpper){
   isUpper = "No"
 }
 
-// Asks if lowercase included
-var isLower = window.confirm("Include lowercase?");
-document.getElementById(isLower);
-
 if (isLower){
   isLower = "Yes"
 } else {
   isLower = "No"
 }
-
-// Asks if special characters included
-var isSpecial = window.confirm("Include special characters?");
-document.getElementById(isSpecial);
 
 if (isSpecial){
   isSpecial = "Yes"
@@ -49,7 +48,9 @@ if (isSpecial){
 
 // Confirmation of users choices
 var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
-document.getElementById(isSpecial);
+
+
+
 
 passwordText.value = password;
 
