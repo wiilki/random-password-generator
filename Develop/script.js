@@ -14,7 +14,7 @@ if (passLength < 8 || passLength > 128){
   window.prompt("Enter a number between 8 and 128")
 } else {
   document.getElementById(passLength);
-  alert(input);
+
 }
 
 var isUpper = window.prompt("Include uppercase?");
