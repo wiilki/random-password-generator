@@ -3,50 +3,55 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
- // var password = generatePassword();
+  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-// Prompts for password length
-var passLength = +window.prompt("Enter length of password between 8 and 128");
+  var wrongMsg = "Invalid choice. Choose a number between 8-128";
 
-// While userinput is invalid, user will get following prompt
-while (passLength !== Number || passLength < 8 || passLength > 128){
-  var passLength = +window.prompt("Invalid. Enter number between 8 and 128");
-  if (passLength >= 8 && passLength <= 128) break;
-}
+  // Prompts for password length
+  var passLength = +window.prompt("Enter length of password between 8 and 128");
 
-// Asks for character type choices
-var isUpper = window.confirm("Include uppercase?");
-var isLower = window.confirm("Include lowercase?");
-var isSpecial = window.confirm("Include special characters?");
+  // While userinput is invalid, user will get following prompt
+    while (isNaN(passLength) || passLength < 8 || passLength > 128) {
+      passLength = +window.prompt(wrongMsg);
+    }
 
-// Assigns values to "Yes" or "No" for confirmation screen
+  // Asks for character type choices
+  var isUpper = window.confirm("Include uppercase?");
+  var isLower = window.confirm("Include lowercase?");
+  var isSpecial = window.confirm("Include special characters?");
 
-if (isUpper){
-  isUpper = "Yes"
-} else {
-  isUpper = "No"
-}
+  // Assigns values to "Yes" or "No" for confirmation screen
 
-if (isLower){
-  isLower = "Yes"
-} else {
-  isLower = "No"
-}
+  if (isUpper) {
+    isUpper = "Yes"
+  } else {
+    isUpper = "No"
+  }
 
-if (isSpecial){
-  isSpecial = "Yes"
-} else {
-  isSpecial = "No"
-}
+  if (isLower) {
+    isLower = "Yes"
+  } else {
+    isLower = "No"
+  }
 
-// Confirmation of users choices
-var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
+  if (isSpecial) {
+    isSpecial = "Yes"
+  } else {
+    isSpecial = "No"
+  }
 
+  // Confirmation of users choices
+  var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
 
+  // Message if character type is not chosen
+  if (isConfirmed) {
+    if ((isUpper && isLower && isSpecial) == "No") {
+      window.alert("You must choose at least 1 character type. Try again!")
+    }
+  }
 
-
-passwordText.value = password;
+  passwordText.value = password;
 
 }
 
