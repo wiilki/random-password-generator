@@ -72,6 +72,7 @@ header {
   clear: both;
 }
 
+/* Changed class from .btn to .button for readability */
 .button {
   border: none;
   background-color: hsl(360, 91%, 36%);
