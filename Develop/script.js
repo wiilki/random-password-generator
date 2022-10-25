@@ -9,24 +9,21 @@ function writePassword() {
 // Created variables for each user choice
 
 // Prompts for password length
+
+
 var passLength = window.prompt("Enter length of password between 8 and 128");
 
 
 if (passLength < 8 || passLength > 128){
   window.prompt("Input a number between 8 and 128");
-  document.getElementById(passLength);
+  
 } 
-document.getElementById(passLength);
+
 
 // Asks for character type choices
 var isUpper = window.confirm("Include uppercase?");
-document.getElementById(isUpper);
-
 var isLower = window.confirm("Include lowercase?");
-document.getElementById(isLower);
-
 var isSpecial = window.confirm("Include special characters?");
-document.getElementById(isSpecial);
 
 if (isUpper){
   isUpper = "Yes"
