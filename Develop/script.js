@@ -14,21 +14,22 @@ function writePassword() {
   var passLength = +window.prompt("Enter length of password between 8 and 128");
 
   // While userinput is invalid, user will get following prompt
-    while (isNaN(passLength) || passLength < 8 || passLength > 128) {
-      passLength = +window.prompt(wrongNumMsg);
-    }
+  while (isNaN(passLength) || passLength < 8 || passLength > 128) {
+    passLength = +window.prompt(wrongNumMsg);
+  }
 
   // Asks for character type choices
   var isUpper = window.confirm("Include uppercase?");
   var isLower = window.confirm("Include lowercase?");
+  var isNumber = window.confirm("Include numbers?");
   var isSpecial = window.confirm("Include special characters?");
 
   // Confirmation of users choices
-  var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
+  var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nNumbers: "+ isNumber + "\nSpecial characters: " + isSpecial)
 
   // Message if character type is not chosen
   if (isConfirmed) {
-    if ((isUpper && isLower && isSpecial) == false) {
+    if ((isUpper && isLower && isSpecial && isNumber) == false) {
       window.alert(noCharMsg);
     }
   }
