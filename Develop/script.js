@@ -28,7 +28,7 @@ if (isUpper){
 }
 
 // Asks if lowercase included
-var isLower; window.confirm("Include lowercase?");
+var isLower = window.confirm("Include lowercase?");
 document.getElementById(isLower);
 
 if (isLower){
@@ -38,7 +38,7 @@ if (isLower){
 }
 
 // Asks if special characters included
-var isSpecial; window.confirm("Include special characters?");
+var isSpecial = window.confirm("Include special characters?");
 document.getElementById(isSpecial);
 
 if (isSpecial){
@@ -48,7 +48,8 @@ if (isSpecial){
 }
 
 // Confirmation of users choices
-window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
+var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
+document.getElementById(isSpecial);
 
 passwordText.value = password;
 
