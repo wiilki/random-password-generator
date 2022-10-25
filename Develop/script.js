@@ -48,8 +48,7 @@ if (isSpecial){
 }
 
 // Confirmation of users choices
-window.confirm("Confirm your choices " +
-  "Length: " + passLength + "  Uppercase: " + isUpper + "  Lowercase:  " + isLower + "  Special characters: " + isSpecial)
+window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nSpecial characters: " + isSpecial)
 
 passwordText.value = password;
 
