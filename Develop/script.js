@@ -6,8 +6,13 @@ function writePassword() {
  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  
-  var userChoice = window.prompt("Enter length of password between 8 and 128");
+  // Asks user for choice
+  var userChoice = {
+    numCharacters: [],
+    typeCharacters: [],
+    
+  }
+
 
 
 
