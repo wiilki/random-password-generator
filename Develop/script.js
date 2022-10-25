@@ -7,17 +7,11 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
 // Created variables for each user choice
-var passLength;
+
+var passLength = window.prompt("Enter length of password between 8 and 128");
 var isUpper;
 var isLower;
 var isSpecial;
-
-  // Asks user for choice
-  var userChoice = window.prompt("Enter length of password between 8 and 128");
-
-
-
-
 
  
   passwordText.value = password;
