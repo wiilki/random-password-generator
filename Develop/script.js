@@ -6,14 +6,15 @@ function writePassword() {
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  var wrongMsg = "Invalid choice. Choose a number between 8-128";
+  var wrongNumMsg = "Invalid choice. Choose a number between 8-128";
+  var noCharMsg = "You must choose at least 1 character type. Try again!";
 
   // Prompts for password length
   var passLength = +window.prompt("Enter length of password between 8 and 128");
 
   // While userinput is invalid, user will get following prompt
     while (isNaN(passLength) || passLength < 8 || passLength > 128) {
-      passLength = +window.prompt(wrongMsg);
+      passLength = +window.prompt(wrongNumMsg);
     }
 
   // Asks for character type choices
@@ -47,7 +48,7 @@ function writePassword() {
   // Message if character type is not chosen
   if (isConfirmed) {
     if ((isUpper && isLower && isSpecial) == "No") {
-      window.alert("You must choose at least 1 character type. Try again!")
+      window.alert(noCharMsg);
     }
   }
 
