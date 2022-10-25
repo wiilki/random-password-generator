@@ -11,7 +11,12 @@ function writePassword() {
 // Prompts for password length
 
 // Asks for character type choices
-var passLength = window.prompt("Enter length of password between 8 and 128");
+var passLength = +window.prompt("Enter length of password between 8 and 128");
+
+while (passLength == false || passLength < 8 || passLength >128){
+  var passLength = +window.prompt("Invalid. Enter number between 8 and 128");
+}
+
 var isUpper = window.confirm("Include uppercase?");
 var isLower = window.confirm("Include lowercase?");
 var isSpecial = window.confirm("Include special characters?");
