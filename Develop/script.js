@@ -6,21 +6,20 @@ function writePassword() {
  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-// Created variables for each user choice
-
 // Prompts for password length
-
-// Asks for character type choices
 var passLength = +window.prompt("Enter length of password between 8 and 128");
 
-while (passLength == false || passLength < 8 || passLength >128){
+// While userinput is invalid, user will get following prompt
+while (passLength !== Number || passLength < 8 || passLength >128){
   var passLength = +window.prompt("Invalid. Enter number between 8 and 128");
 }
 
+// Asks for character type choices
 var isUpper = window.confirm("Include uppercase?");
 var isLower = window.confirm("Include lowercase?");
 var isSpecial = window.confirm("Include special characters?");
 
+// Assigns values to "Yes" or "No" for confirmation screen
 if (isUpper){
   isUpper = "Yes"
 } else {
