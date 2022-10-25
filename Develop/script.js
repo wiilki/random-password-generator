@@ -10,8 +10,9 @@ function writePassword() {
 var passLength = +window.prompt("Enter length of password between 8 and 128");
 
 // While userinput is invalid, user will get following prompt
-while (passLength !== Number || passLength < 8 || passLength >128){
+while (passLength !== Number || passLength < 8 || passLength > 128){
   var passLength = +window.prompt("Invalid. Enter number between 8 and 128");
+  if (passLength >= 8 && passLength <= 128) break;
 }
 
 // Asks for character type choices
@@ -20,6 +21,7 @@ var isLower = window.confirm("Include lowercase?");
 var isSpecial = window.confirm("Include special characters?");
 
 // Assigns values to "Yes" or "No" for confirmation screen
+
 if (isUpper){
   isUpper = "Yes"
 } else {
