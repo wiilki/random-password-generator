@@ -11,7 +11,7 @@ The biggest challenge, by far, was figuring out how to iterate loops to produce 
 
 ## Installation
 
- * To deploy application, go to [My Github Project](https://wiilki.github.io/random-password-generator/)
+ * To deploy application, go to [My Github Project](https://wiilki.github.io/random-password-generator-refactor/)
 
 ## Usage
 
