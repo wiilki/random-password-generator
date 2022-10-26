@@ -66,12 +66,11 @@ function writePassword() {
     }
   }
 
-  var randomChar = "";
-  var phrase = [];
+    var phrase = [];
 
   // Pushes random character to array for the length of passLength
   for (var y = 0; y < passLength; y++) {
-    randomChar = possibleChar[(Math.random() * possibleChar.length)];
+    var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
     if (randomChar) {
       phrase.push(randomChar);
     } else {
