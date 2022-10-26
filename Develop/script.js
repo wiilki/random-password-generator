@@ -3,12 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
   // Variables
   var wrongNumMsg = "Invalid choice. Choose a number between 8-128";
   var noCharMsg = "You must choose at least 1 character type. Try again!";
+  var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+
+  // var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   // Prompts for password length
   var passLength = +window.prompt("Enter length of password between 8 and 128");
@@ -37,8 +38,10 @@ function writePassword() {
       window.alert("PLACEHOLDER");
     }
   }
-  passwordText.value = password;
 
+
+
+  // passwordText.value = password;
 }
 
 
