@@ -59,11 +59,15 @@ function writePassword() {
       possibleChar.push(specialChar[x]);
     }
   }
-  
-  var randomChar = possibleChar[Math.floor(Math.random()*possibleChar.length)];
 
-  
-  window.alert(possibleChar);
+  var phrase = [];
+
+  for (var y = 0; y < passLength; y++) {
+    var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
+    phrase.push(randomChar[y]);
+  }
+
+  window.alert(phrase);
 
 
   passwordText.value = password;
