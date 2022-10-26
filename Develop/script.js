@@ -47,41 +47,42 @@ function writePassword() {
       possibleChar.push(upperLetters[i]);
     }
   }
-  
+
   if (isLower) {
     for (var j = 0; j < lowerLetters.length; j++) {
       possibleChar.push(lowerLetters[j]);
     }
   }
-  
+
   if (isNumber) {
     for (var k = 0; k < numbers.length; k++) {
       possibleChar.push(numbers[k]);
     }
   }
-  
+
   if (isSpecial) {
     for (var x = 0; x < specialChar.length; x++) {
       possibleChar.push(specialChar[x]);
     }
   }
 
-  window.alert(possibleChar);
-
-
+  var randomChar = "";
   var phrase = [];
-// Pushes random character to array for the length of passLength
+
+  // Pushes random character to array for the length of passLength
   for (var y = 0; y < passLength; y++) {
-    var randomChar = possibleChar[(Math.random() * possibleChar.length)];
-    phrase.push(randomChar[y]);
+    randomChar = possibleChar[(Math.random() * possibleChar.length)];
+    if (randomChar) {
+      phrase.push(randomChar);
+    } else {
+      continue;
+    }
   }
-
-
+  window.alert(phrase);
 
   passwordText.value = password;
+
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
