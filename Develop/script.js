@@ -5,9 +5,10 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
 
   // Variables
+  var possibleChar = [];
   var wrongNumMsg = "Invalid choice. Choose a number between 8-128";
   var noCharMsg = "You must choose at least 1 character type. Try again!";
-  var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
   var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var upperLetters = lowerLetters.map(element => {
@@ -39,29 +40,51 @@ function writePassword() {
     window.alert("Try again!");
   } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
     window.alert(noCharMsg);
-
-    // Executed with valid inputs
-    /*
-  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-  } else {
-    window.alert("PLACEHOLDER");
-  } */
-
-   
-    for (var i = 0; i <= passLength; i++) {
-      var passwordText = Math.floor(Math.random() * chars.length);
-      password += chars.substring(randomNumber, randomNumber + 1);
-    }
-
-
-
-    passwordText.value = password;
   }
+  // Pushes selected character types into one single array
+  if (isUpper) {
+    for (var i = 0; i < upperLetters.length; i++) {
+      possibleChar.push(upperLetters[i]);
+    }
+  } else if (isLower) {
+    for (var j = 0; j < lowerLetters.length; j++) {
+      possibleChar.push(lowerLetters[j]);
+    }
+  } else if (isNumber) {
+    for (var k = 0; k < numbers.length; k++) {
+      possibleChar.push(numbers[k]);
+    }
+  } else if (isSpecial) {
+    for (var x = 0; x < specialChar.length; x++) {
+      possibleChar.push(specialChar[x]);
+    }
+  }
+
+  window.alert(possibleChar);
+
+
+  /*
+  New plan:
+  -If value is true, then push corresponding variable to array
+  -If value is false, then skip
+  -Lastly, randomize
+  */
+
+
+  // Executed with valid inputs
+  /*
+} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+} else {
+  window.alert("PLACEHOLDER");
+} */
+
+  passwordText.value = password;
 }
 
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
