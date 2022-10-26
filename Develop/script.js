@@ -39,6 +39,14 @@ function writePassword() {
     window.alert("Try again!");
   } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
     window.alert(noCharMsg);
+
+    // Executed with valid inputs
+  } else if (isUpper && isLower && isSpecial && isNumber) {
+    window.alert("PLACEHOLDER");
+  } else if (isUpper && isLower && isSpecial && isNumber) {
+    window.alert("PLACEHOLDER");
+  } else if (isUpper && isLower && isSpecial && isNumber) {
+    window.alert("PLACEHOLDER");
   } else {
     window.alert("PLACEHOLDER");
   }
