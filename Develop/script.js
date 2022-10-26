@@ -59,27 +59,12 @@ function writePassword() {
       possibleChar.push(specialChar[x]);
     }
   }
+  
+  var randomChar = possibleChar[Math.floor(Math.random()*possibleChar.length)];
 
+  
   window.alert(possibleChar);
 
-
-  /*
-  New plan:
-  -If value is true, then push corresponding variable to array
-  -If value is false, then skip
-  -Lastly, randomize
-  */
-
-
-  // Executed with valid inputs
-  /*
-} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-} else if (!isUpper && !isLower && !isSpecial && !isNumber) {
-} else {
-  window.alert("PLACEHOLDER");
-} */
 
   passwordText.value = password;
 }
