@@ -20,7 +20,6 @@ The biggest challenge, by far, was figuring out how to iterate loops to produce 
  * Click "OK" for character types you would like to include. Click "cancel" for the ones you do NOT want to include.
  * Complete all prompts
 
-
 ![Finished Screenshot](assets/screenshot.jpg)
 
 ## Credits
