@@ -3,18 +3,18 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+
   // Variables
   var wrongNumMsg = "Invalid choice. Choose a number between 8-128";
   var noCharMsg = "You must choose at least 1 character type. Try again!";
-  var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
   var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
   var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var upperLetters = lowerLetters.map(element => {
     return element.toUpperCase();
   });
 
-
-  // var password = generatePassword();
+  // var password = generatePassword(); --Commented out because unsure of use
   var passwordText = document.querySelector("#password");
 
   // Prompts for password length
@@ -37,13 +37,12 @@ function writePassword() {
   // Message if character type is not chosen or user cancels
   if (!isConfirmed) {
     window.alert("Try again!");
+  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+    window.alert(noCharMsg);
   } else {
-    if ((isUpper && isLower && isSpecial && isNumber) == false) {
-      window.alert(noCharMsg);
-    } else {
-      window.alert("PLACEHOLDER");
-    }
+    window.alert("PLACEHOLDER");
   }
+
 
 
 
