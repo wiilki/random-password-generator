@@ -46,28 +46,36 @@ function writePassword() {
     for (var i = 0; i < upperLetters.length; i++) {
       possibleChar.push(upperLetters[i]);
     }
-  } else if (isLower) {
+  }
+  
+  if (isLower) {
     for (var j = 0; j < lowerLetters.length; j++) {
       possibleChar.push(lowerLetters[j]);
     }
-  } else if (isNumber) {
+  }
+  
+  if (isNumber) {
     for (var k = 0; k < numbers.length; k++) {
       possibleChar.push(numbers[k]);
     }
-  } else if (isSpecial) {
+  }
+  
+  if (isSpecial) {
     for (var x = 0; x < specialChar.length; x++) {
       possibleChar.push(specialChar[x]);
     }
   }
 
-  var phrase = [];
+  window.alert(possibleChar);
 
+
+  var phrase = [];
+// Pushes random character to array for the length of passLength
   for (var y = 0; y < passLength; y++) {
-    var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
+    var randomChar = possibleChar[(Math.random() * possibleChar.length)];
     phrase.push(randomChar[y]);
   }
 
-  window.alert(phrase);
 
 
   passwordText.value = password;
