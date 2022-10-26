@@ -25,18 +25,18 @@ function writePassword() {
   var isSpecial = window.confirm("Include special characters?");
 
   // Confirmation of users choices
-  var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nNumbers: "+ isNumber + "\nSpecial characters: " + isSpecial)
+  var isConfirmed = window.confirm("Confirm your choices \nLength: " + passLength + " \nUppercase: " + isUpper + "\nLowercase:  " + isLower + "\nNumbers: " + isNumber + "\nSpecial characters: " + isSpecial)
 
-  // Message if character type is not chosen
-  if (isConfirmed) {
+  // Message if character type is not chosen or user cancels
+  if (!isConfirmed) {
+    window.alert("Try again!");
+  } else {
     if ((isUpper && isLower && isSpecial && isNumber) == false) {
       window.alert(noCharMsg);
+    } else {
+      window.alert("PLACEHOLDER");
     }
-    // Message if user cancels
-  } else {
-    window.alert("Try again!");
   }
-
   passwordText.value = password;
 
 }
