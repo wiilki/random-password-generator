@@ -41,22 +41,27 @@ function writePassword() {
     window.alert(noCharMsg);
 
     // Executed with valid inputs
-  } else if (isUpper && isLower && isSpecial && isNumber) {
-    window.alert("PLACEHOLDER");
-  } else if (isUpper && isLower && isSpecial && isNumber) {
-    window.alert("PLACEHOLDER");
-  } else if (isUpper && isLower && isSpecial && isNumber) {
-    window.alert("PLACEHOLDER");
+    /*
+  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
+  } else if (!isUpper && !isLower && !isSpecial && !isNumber) {
   } else {
     window.alert("PLACEHOLDER");
+  } */
+
+   
+    for (var i = 0; i <= passLength; i++) {
+      var passwordText = Math.floor(Math.random() * chars.length);
+      password += chars.substring(randomNumber, randomNumber + 1);
+    }
+
+
+
+    passwordText.value = password;
   }
-
-
-
-
-  // passwordText.value = password;
 }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
