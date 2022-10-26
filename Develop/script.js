@@ -78,7 +78,14 @@ function writePassword() {
     }
   }
 
+  // Assigns passArray to password string
+  password = passArray.join("");
 
+  // Prints password to text box
+  function generatePassword(passArray) {
+    document.getElementById("password").textContent = passArray;
+
+}
   passwordText.value = password;
 
 }
