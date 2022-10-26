@@ -32,6 +32,9 @@ function writePassword() {
     if ((isUpper && isLower && isSpecial && isNumber) == false) {
       window.alert(noCharMsg);
     }
+    // Message if user cancels
+  } else {
+    window.alert("Try again!");
   }
 
   passwordText.value = password;
