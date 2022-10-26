@@ -15,7 +15,7 @@ function writePassword() {
     return element.toUpperCase();
   });
 
-  // var password = generatePassword(); --Commented out because unsure of use
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   // Prompts for password length
@@ -66,18 +66,18 @@ function writePassword() {
     }
   }
 
-    var phrase = [];
+  var passArray = [];
 
   // Pushes random character to array for the length of passLength
   for (var y = 0; y < passLength; y++) {
     var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
     if (randomChar) {
-      phrase.push(randomChar);
+      passArray.push(randomChar);
     } else {
       continue;
     }
   }
-  window.alert(phrase);
+
 
   passwordText.value = password;
 
